@@ -68,10 +68,12 @@ addServiceBtn.addEventListener("click", function () {
     services.push({
         name: newService,
         price: "Price Not Set"
+        
     });
     message.textContent = "Service added successfully!";
     message.style.color = "green";
-
+    
+    saveServices();
     displayServices();
 
     serviceInput.value = "";
@@ -93,3 +95,13 @@ servicesList.addEventListener("click", function (event) {
     }
 
 });
+
+function saveServices(){
+    localStorage.setItem("services", JSON.stringify(services));
+}
+const savedServices = localStorage.getItem("services");
+
+if(savedServices) {
+    service.length =0;
+    service.push(...JSON.parse(savedServices));
+}
