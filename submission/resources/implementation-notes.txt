@@ -1,0 +1,11 @@
+Feature 1:Dynamic Service Rendering
+this is whereby the services are stored in a JavaScript array and are dispalyed dynamically using the forEach() loop
+
+Feature 2:Add and delete 
+Users can add new seerrvices using the input field and add service button same to the delete button where each service has a delete button below
+
+Feature 3:The application checks that the service name is not empty before adding it and then a validation message is displayed if the input is empty
+
+Feature 4:I tried to make the add and delete button to work efficiently but every time i refreshed my web page everything returned to how it was. I have really triend my best but i was not successful.
+
+Feature 5: Intrduced a welcome message button that displays a welcome message in the About ssection.
