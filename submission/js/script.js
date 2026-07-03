@@ -60,7 +60,8 @@ addServiceBtn.addEventListener("click", function () {
     const newService = serviceInput.value.trim();
 
     if (newService === "") {
-        alert("Please enter a service name.");
+        message.textContent = "Please enter a service name.";
+        message.style.color = "blue";
         return;
     }
 
@@ -68,10 +69,15 @@ addServiceBtn.addEventListener("click", function () {
         name: newService,
         price: "Price Not Set"
     });
+    message.textContent = "Service added successfully!";
+    message.style.color = "green";
 
     displayServices();
 
     serviceInput.value = "";
+    setTimeout(function(){
+        message.textContent = "";
+    },3000);
 
 });
 servicesList.addEventListener("click", function (event) {
