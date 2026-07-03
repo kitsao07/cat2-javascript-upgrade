@@ -58,6 +58,7 @@ const addServiceBtn = document.getElementById("addServiceBtn");
 addServiceBtn.addEventListener("click", function () {
 
     const newService = serviceInput.value.trim();
+    const message = document.getElementById("message");
 
     if (newService === "") {
         message.textContent = "Please enter a service name.";
@@ -72,7 +73,9 @@ addServiceBtn.addEventListener("click", function () {
     });
     message.textContent = "Service added successfully!";
     message.style.color = "green";
-    
+
+
+
     saveServices();
     displayServices();
 
@@ -89,7 +92,7 @@ servicesList.addEventListener("click", function (event) {
         const index = event.target.dataset.index;
 
         services.splice(index, 1);
-
+        saveServices();
         displayServices();
 
     }
@@ -102,6 +105,13 @@ function saveServices(){
 const savedServices = localStorage.getItem("services");
 
 if(savedServices) {
-    service.length =0;
-    service.push(...JSON.parse(savedServices));
+    services.length =0;
+    services.push(...JSON.parse(savedServices));
 }
+const welcomeBtn = document.getElementById("welcomeBtn");
+const welcomeMessage = document.getElementById("welcomeMessage");
+
+welcomeBtn.addEventListener("click", function(){
+
+    welcomeMessage.textContent = "Welcome to Big Tub Wash! We Are Happy to Serve you.";
+});
