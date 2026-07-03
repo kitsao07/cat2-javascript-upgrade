@@ -1,0 +1,181 @@
+:root {
+
+    /*BACKGROUND COLORS*/
+
+    --col-bg-light: #ffffff;
+    --col-bg-soft: #f5fbff;
+    --col-bg-card: #ffffff;
+
+    /* PRIMARY BRAND COLORS */
+
+    --col-blue: #00a8e8;
+    --col-blue-dark: #0077b6;
+    --col-blue-soft: #cfe9ff;
+
+}
+
+body {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    background-color: var(--col-bg-light);
+    color: var(--col-blue-dark)
+}
+
+header {
+
+    padding-top: 5px;
+    padding-bottom: 20px;
+
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--col-cyan);
+
+    text-align: center;
+
+}
+
+header h1 {
+    font-family:'Young Serif';
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--col-blue-dark);
+}
+
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+nav ul li a {
+    color: var(--col-text-dark);
+    text-decoration: none;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    padding: 8px 14px;
+    border: 1px solid var(--col-blue);
+    /*long hand border rule*/
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--col-blue);
+    border-radius: 8px;
+}
+
+/*pseudo class selectors :hover, :root*/
+nav ul li a:hover {
+    background-color: var(--col-blue);
+    color: white;
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 30px;
+    background-color: var(--col-bg-soft);
+    border-radius: 5px;
+    border-left-style: solid;
+    border-left-color: var(--col-blue);
+    border-left-width: 7px;
+    /*transitions*/
+    transition-property: border-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    /*shorthand*/
+    transition: border-color 2s ease;
+}
+
+section:hover {
+    border-left-color: var(--col-accent);
+}
+
+h2 {
+    color: var(--col-blue-soft);
+    border-bottom: 2px solid var(--col-blue);
+    padding: 5px;
+}
+
+p {
+    color: var(--col-text-muted);
+}
+
+main b {
+    color: var(--col-coral);
+}
+
+main i {
+    color: var(--col-cyan);
+}
+
+h2 {
+    color: var(--col-sunset);
+    border-bottom: 2px solid var(--col-amber);
+    border-bottom-color: var(--col-amber);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+img {
+    max-width: 100%;
+    /*parent*/
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+}
+
+footer p {
+    color: var(--col-muted);
+}
+
+
+.grid article {
+    background: var(--col-bg-card);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+
+}
+
+main {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+ @media screen and (max-width: 600px) {
+    .characters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+}
+
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+
+    @media screen and (min-width: 769px) and (max-width: 1023px) {}
+
+    @media screen and (min-width: 1024px) and (max-width: 1279px) {}
+
+    @media screen and (min-width: 1280px) {}
+}
