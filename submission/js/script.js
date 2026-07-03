@@ -34,16 +34,56 @@ const services = [
 ];
 
 const servicesList = document.getElementById("servicesList");
-services.forEach(function(service) {
+function displayServices() {
+    servicesList.innerHTML = "";
+    services.forEach(function(service, index) {
 
-    const article = document.createElement("article");
+        const article = document.createElement("article");
 
-    article.innerHTML = `
-        <h3>${service.name}</h3>
-        <p>${service.price}</p>
-    `;
+        article.innerHTML = `
+            <h3>${service.name}</h3>
+            <p>${service.price}</p>
+            <button class="deleteBtn" data-index="${index}">
+                Delete
+            </button>
+        `;
 
-    servicesList.appendChild(article);
+        servicesList.appendChild(article);
+    });
+}
+displayServices();
+const serviceInput = document.getElementById("serviceInput");
+const addServiceBtn = document.getElementById("addServiceBtn");
+
+addServiceBtn.addEventListener("click", function () {
+
+    const newService = serviceInput.value.trim();
+
+    if (newService === "") {
+        alert("Please enter a service name.");
+        return;
+    }
+
+    services.push({
+        name: newService,
+        price: "Price Not Set"
+    });
+
+    displayServices();
+
+    serviceInput.value = "";
 
 });
-console.log("Script loaded!")
+servicesList.addEventListener("click", function (event) {
+
+    if (event.target.classList.contains("deleteBtn")) {
+
+        const index = event.target.dataset.index;
+
+        services.splice(index, 1);
+
+        displayServices();
+
+    }
+
+});
